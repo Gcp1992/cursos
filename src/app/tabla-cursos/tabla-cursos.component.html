@@ -1,0 +1,21 @@
+<h1>Tabla Cursos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Duración</th>
+      <th>Nivel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let curso of miServicio.cursos">
+      <td>{{curso._id}}</td>
+      <td>{{curso._nombre}}</td>
+      <td>{{curso._duracion}}</td>
+      <td>{{curso._nivel}}</td> <input type="button" value="Modificar" (click)="actualizarTabla()" [routerLink]="['/tablaModificar', curso._id]">
+    </tr>
+
+  </tbody>
+</table>
