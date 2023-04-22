@@ -5,6 +5,8 @@ import { Nivel } from './_modelo/nivel';
 @Injectable({
   providedIn: 'root'
 })
+
+//OBJETO DE TIPO SERVICIO QUE POSTERIORMENTE SERÁ INYECTADO
 export class CursoServioService {
 
   //Almaceno en una variable un array de objetos de tipo Curso
@@ -14,8 +16,9 @@ export class CursoServioService {
 
   constructor() { }
 
+  //FUNCIÓN QUE HACE UNA ACTUALIZACIÓN EN BASE AL ID
   actualizarCursosServicio(ObjetoCurso:Curso){
-    let elementIndex = this.cursos.findIndex((obj => obj._id == ObjetoCurso._id));
+  let elementIndex : number = this.cursos.findIndex((obj => obj._id == ObjetoCurso._id));
    this.cursos[elementIndex]._id = ObjetoCurso._id;
    this.cursos[elementIndex]._nombre = ObjetoCurso._nombre;
    this.cursos[elementIndex]._duracion = ObjetoCurso._duracion;

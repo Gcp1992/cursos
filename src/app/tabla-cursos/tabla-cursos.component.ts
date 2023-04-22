@@ -17,11 +17,13 @@ export class TablaCursosComponent {
 
   }
 
+  //VALORES POR DEFECTO DE LA TABLA DONDE MODIFICAMOS
   id:number=0;
   nombre:string="";
   duracion:number=0;
   nivel:Nivel=Nivel.Iniciacion;
 
+  //Función que actualiza la tabla, esta llama a la función del servicio donde se le pasa un objeto de tipo Curso
   actualizarTabla(){
     this.miServicio.actualizarCursosServicio(new Curso(this.id,this.nombre,this.duracion,this.nivel));
     this.router.navigate(['tablaModificar', this.id])
